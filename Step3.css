@@ -14,18 +14,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
 }
-
+body * {
+  /* border: 1px solid #000; */
+}
 .flex-row {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col {
+/* .flex-col {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .justify-start {
   justify-content: flex-start;
@@ -120,10 +122,12 @@ body {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: #ffffff;
   width: 100%;
-  padding-top: 168px;
-  padding-bottom: 80px;
+  height: 50%;
 }
 .text {
   color: #000000;
@@ -148,5 +152,5 @@ body {
 }
 
 .echarts-container {
-  padding: 20px;
+  height: 50%;
 }

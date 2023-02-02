@@ -13,7 +13,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <style></style>
+    <style>
+      #main {
+        width: 75%;
+      }
+      @media screen and (min-width: 1024px) {
+        #main {
+          width: 50%;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="flex-col items-center page">
@@ -25,13 +34,13 @@
     </div>
     <!--为Chart准备定义了宽高的DOM-->
     <div class="echarts-container">
-      <div id="main"></div>
+      <div id="main" style="margin: 0 auto"></div>
     </div>
     <script type="text/javascript">
       const main = document.getElementById("main");
-      const width = document.documentElement.clientWidth;
-      main.style.width = `${width - 40}px`;
-      main.style.height = `${width * 1.2}px`;
+      const height = document.documentElement.clientHeight;
+      // main.style.width = "50%";
+      main.style.height = "100%";
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(main);
 
@@ -81,6 +90,11 @@
       };
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
+
+      window.onresize = function () {
+        myChart.resize();
+        document.body.width = "100vw";
+      };
     </script>
   </body>
 </html>
